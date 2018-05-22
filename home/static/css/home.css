@@ -1,0 +1,247 @@
+
+.section-header {
+  background: url("../img/bg_pattern.gif");
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 220px;
+}
+.section-header .boxes {
+  position: relative;
+  width: 35%;
+  height: 440px;
+}
+.section-header .boxes .box-white {
+  width: 87%;
+  height: 403px;
+  background: transparent;
+  position: absolute;
+  top: -7px;
+  left: 68px;
+  z-index: 0;
+  border: 1px solid #fff;
+}
+.section-header .boxes .box-green {
+  width: 85%;
+  height: 410px;
+  background: #007991;
+  background: -webkit-linear-gradient(to right, #007991, #78ffd6);
+  background: linear-gradient(to right, #007991, #78ffd6);
+  border: 1px solid #00dae5;
+  position: absolute;
+  right: -80px;
+  top: 20px;
+}
+.section-header .boxes .box-green h1 {
+  font-size: 63px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #272830;
+}
+.section-header .boxes .box-green p {
+  font-size: 49px;
+  text-align: center;
+  letter-spacing: 1px;
+  width: 90%;
+  margin: 0 auto;
+  color: #272830;
+}
+.section-header .shirts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+}
+.section-header .shirts img {
+  width: 100%;
+  height: 430px;
+}
+.section-gallery {
+  background: url("../img/gray-pattern.png");
+  min-height: 55vh;
+  position: relative;
+  z-index: 100000000000;
+  padding-bottom: 220px;
+}
+.section-gallery:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 345px;
+  top: -136px;
+  -webkit-transform: skewY(-8deg);
+  transform: skewY(-8deg);
+  background: url("../img/gray-pattern.png");
+}
+.section-gallery .content {
+  padding: 10px 55px;
+  text-align: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.section-gallery .content .title * {
+  font-size: 46px;
+  margin: 0;
+}
+.section-gallery .content .gallery .image img {
+  width: 260px;
+}
+.section-gallery .content .btn {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 300px;
+}
+.section-tracking {
+  background: url("../img/bg_pattern.gif");
+  position: relative;
+  z-index: 100000000000;
+  padding-bottom: 225px;
+}
+.section-tracking:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 415px;
+  top: -136px;
+  -webkit-transform: skewY(-8deg);
+  transform: skewY(6deg);
+  background: url("../img/bg_pattern.gif");
+}
+.section-tracking .content {
+  padding: 0 40px;
+  text-align: center;
+}
+.section-tracking .content .title * {
+  color: #fff;
+  font-size: 41px;
+}
+.section-tracking .content .search input {
+  width: 220px;
+  padding: 10px;
+  font-size: 25px;
+  text-align: center;
+  border: 1px solid;
+  box-shadow: none;
+  letter-spacing: 5px;
+  box-sizing: border-box;
+}
+.section-tracking .content .btn {
+  margin-top: 20px;
+  min-width: 220px;
+}
+.section-contact {
+  background: url("../img/gray-pattern.png");
+  position: relative;
+  z-index: 100000000000;
+  padding-bottom: 20px;
+}
+.section-contact:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 345px;
+  top: -85px;
+  -webkit-transform: skewY(-6deg);
+  transform: skewY(-6deg);
+  background: url("../img/gray-pattern.png");
+}
+.section-contact .content {
+  padding: 10px 55px;
+  text-align: center;
+  max-width: 980px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 90%;
+}
+.section-contact .content .title h3 {
+  font-size: 37px;
+  text-align: center;
+}
+.section-contact .content .title p {
+  font-size: 22px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 470px;
+}
+.section-contact .content .subscribe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.section-contact .content .subscribe input {
+  padding: 15px 10px;
+  width: 264px;
+  box-sizing: border-box;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+@media (max-width: 990px) {
+  .section-header .boxes .box-white {
+    width: 100%;
+  }
+  .section-header .boxes .box-green {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .section-header {
+    flex-direction: column;
+  }
+  .section-header .boxes {
+    width: 90%;
+    margin-top: 190px;
+  }
+  .section-header .boxes .box-white {
+    width: 100%;
+    left: 0;
+  }
+  .section-header .boxes .box-green {
+    right: 12px;
+    width: 90%;
+  }
+  .section-header .boxes .box-green h1 {
+    font-size: 49px;
+  }
+  .section-header .boxes .box-green p {
+    font-size: 35px;
+  }
+  .section-header .shirts {
+    width: 90%;
+  }
+  .section-contact .content {
+    padding: 10px 10px;
+  }
+  .section-contact .content .title h3 {
+    font-size: 23px;
+    text-align: center;
+  }
+  .section-contact .content .title p {
+    font-size: 18px;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 470px;
+  }
+  .section-contact .content .subscribe {
+    flex-direction: column;
+  }
+  .section-contact .content .subscribe input {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+}
+@media (max-width: 520px) {
+  .section-gallery .content .gallery .image img {
+    width: 220px;
+  }
+}
