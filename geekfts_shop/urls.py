@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
-from home.views import IndexView
+from home.views import IndexView, GalleryView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', IndexView.as_view())
+    path('', IndexView.as_view()),
+    path('galeria', GalleryView.as_view())
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

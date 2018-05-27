@@ -1,0 +1,139 @@
+.section-gallery {
+  background: url("../img/gray-pattern.png");
+  min-height: 100vh;
+  padding: 140px 60px;
+}
+.section-gallery .title {
+	text-align: center;
+	background: #272830;
+	padding: 16px;
+	font-size: 19px;
+	box-sizing: border-box;
+	color: #fff;
+	width: 90%;
+	max-width: 820px;
+	margin: 0 auto;
+	margin-top: 60px;
+	position: relative;
+}
+.section-gallery .title:before {
+	content: "";
+	position: absolute;
+	left: -46px;
+	border-left: 25px solid transparent;
+	border-top: 29px solid transparent;
+	border-right: 21px solid #272830;
+	border-bottom: 33px solid #272830;
+	top: 0px;
+}
+.section-gallery .title h2{
+	margin: 0;
+	font-weight: 500;
+	letter-spacing: 13px;
+	text-transform: uppercase;
+}
+.section-gallery .content{
+	display: flex;
+	width: 100%;
+	max-width: 1220px;
+    margin: 0 auto;
+    margin-top: 40px;
+    justify-content: center;
+    align-items: flex-start;
+}
+.section-gallery .content .filters{
+	max-width: 230px;
+	width: 30%;
+	background: #eaeaea;
+	margin-right: 20px;
+	padding: 20px 20px 40px 20px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+}
+.section-gallery .content .filters .header{
+	font-size: 22px;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #d5d5d5;
+	padding-bottom: 10px;
+	color: #534c4c;
+}
+.section-gallery .content .filters .filter{
+	border: 1px solid #272830;
+	color: #272830;
+	text-decoration: none;
+	padding: 8px 11px;
+	letter-spacing: 6px;
+	margin-top: 10px;
+}
+.section-gallery .content .filters .filter.active{
+	background-color: #272830;
+	color: #fff;
+}
+.section-gallery .content .shirts{
+	width: 80%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.section-gallery .content .shirts .card-shirt{
+	height: 350px;
+	width: 270px;
+	background: #eaeaea;
+	margin-left: 14px;
+	margin-bottom: 10px;
+}
+.section-gallery .content .shirts .card-shirt .image{
+	background-size: 100% !important;
+    width: 90%;
+    height: 85%;
+    box-sizing: border-box;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    margin: 0 auto;
+}
+.section-gallery .content .shirts .card-shirt .btn{
+	padding: 10px;
+    font-size: 11px;
+    letter-spacing: 4px;
+    width: 122px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+
+@media (max-width: 768px) {
+ 	.section-gallery {
+		padding: 140px 10px;
+	}
+	.section-gallery .title {
+		font-size: 15px;
+		margin-top: 120px;
+	}
+	.section-gallery .title:before {
+		display: none;
+	}
+
+}
+@media (max-width: 550px) {
+	.section-gallery .content .filters{
+		display: none;
+	}
+	.section-gallery .content .shirts{
+		width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+	.section-gallery .content .shirts .card-shirt{
+		width: 100%;
+		max-width: 270px;
+		margin: 0 auto;
+		margin-bottom: 10px;
+	}
+}

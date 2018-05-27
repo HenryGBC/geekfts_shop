@@ -64,6 +64,9 @@ body strong {
   margin-right: 20px;
   transition: all 0.2s ease-in;
 }
+.navbar.white .menu a {
+  color: #272830;
+}
 .navbar .menu a:hover {
   text-decoration: underline;
 }
@@ -121,6 +124,13 @@ body strong {
   top: 0;
   left: 1px;
 }
+
+
+.navbar.white .logo-css .letter-g .trapezoid {
+  border-bottom: 25px solid #dcdddd !important;
+}
+
+
 .logo-css .letter-e-one {
   width: 80px;
   height: 105px;
@@ -300,7 +310,39 @@ body strong {
   bottom: 80px;
   right: 28px;
   border-radius: 8px;
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+.ws-chat.active{
+  visibility: visible;
+  -webkit-animation: fadein 1s forwards; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 1s forwards; /* Firefox < 16 */
+      -ms-animation: fadein 1s forwards; /* Internet Explorer */
+       -o-animation: fadein 1s forwards; /* Opera < 12.1 */
+          animation: fadein 1s forwards;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 .ws-chat .close{
   position: absolute;
@@ -375,15 +417,23 @@ footer .quote * {
   font-size: 25px;
   font-weight: 100;
   font-style: italic;
+  margin-bottom: 15px;
 }
 footer .socials {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 footer .socials a {
   color: #fff;
-  font-size: 25px;
+  font-size: 35px;
   margin-right: 10px;
   text-decoration: none;
+  margin-left: 25px;
+}
+footer .socials p {
+  font-size: 17px;
 }
 footer .powered {
   text-align: center;

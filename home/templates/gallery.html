@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="static/css/base.css">
+    <link rel="stylesheet" href="static/css/gallery.css">
+    <title>Geekfts | Galería</title>
+    <meta description="Un estilo Geek único y original solo para ti">
+</head>
+<body >
+    <div id="app">
+      <nav class="navbar white" >
+        <a href="/" class="logo-css">
+            <div class="letter-g">
+                <div class="circle">
+                </div>
+                <div class="trapezoid">
+                </div>
+                <div class="rectangle"></div>
+                <div class="half-left-circle"></div>
+              </div>
+        </a>
+        <div class="menu">
+          <a href="#camisetas">Camisetas</a>
+          <a href="#tracking">Mi Pedido</a>
+        </div>
+      </nav>
+      <section class="section-gallery">
+        <div class="title">
+          <h2>Galería Geekfts</h2>
+        </div>
+
+        <div class="content">
+          
+          <div class="filters">
+            <a href="#" class="filter active">Todas</a>
+
+            <div class="header">
+              Sexo
+            </div>
+            <a href="#" class="filter ">Hombres</a>
+            <a href="#" class="filter ">Mujeres</a>
+          </div>
+          <div class="shirts">
+             {% for shirt in shirts %}
+              <div class="card-shirt">
+                <div class="image" style="background: url('media/{{shirt.image}}')"></div>
+                <!-- <img src="media/{{shirt.image}}" alt=""> -->
+                <a href="#" class="btn btn-dark btn-shirt">
+                  <span>La quiero</span>
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+      <footer>
+          <div class="quote">
+              <h4>Siguenos en
+              </h4>
+          </div>
+
+          <div class="socials">
+              <a target="_blank" href="https://www.facebook.com/geekfts/">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a target="_blank" href="https://www.instagram.com/geekfts/">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+          </div>
+          <div class="socials">
+              <p>O contáctanos a través de geekfts@gmail.com</p>
+              <a target="_blank" href="mailto:geekfts@gmail.com">
+                  <i class="fa fa-envelope-o" aria-hidden="true"></i>
+              </a>
+          </div>
+          <div class="powered">
+            <p>Powered By @Geekfts</p>
+          </div>
+          
+      </footer>
+    	<div class="ws-chat"  v-bind:class="{ active: showChat}">
+    		<i class="fa fa-times close" v-on:click="toggleChat" aria-hidden="true"></i>
+    		<div class="header">
+    			<p>Hola,</p>
+    			<p>Este es nuestro Whatsapp: +57 305 8628798</p>
+    			<p>Comunicate con nosotros</p>
+    		</div>
+    		<div class="body">
+    			<a target="_blank" href="https://api.whatsapp.com/send?phone=573058628798&text=Hola%20quiero%20info">Enviar Mensaje</a>
+    		</div>
+    	</div>
+      <div class="ws-btn"  v-on:click="toggleChat">
+          <i class="fa fa-whatsapp" aria-hidden="true"></i>
+      </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="static/js/main.js"></script>
+</body>
+</html>

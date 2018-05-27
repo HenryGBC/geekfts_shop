@@ -12,136 +12,181 @@
     <link rel="stylesheet" href="static/css/base.css">
     <link rel="stylesheet" href="static/css/home.css">
     <title>Geekfts</title>
-    <meta description="Tu ">
+    <meta description="Un estilo Geek único y original solo para ti">
 </head>
-<body>
-    <nav class="navbar">
-      <div class="logo-css">
-          <div class="letter-g">
-              <div class="circle">
+<body >
+    <div id="app">
+      <nav class="navbar" >
+        <div class="logo-css">
+            <div class="letter-g">
+                <div class="circle">
+                </div>
+                <div class="trapezoid">
+                </div>
+                <div class="rectangle"></div>
+                <div class="half-left-circle"></div>
               </div>
-              <div class="trapezoid">
+        </div>
+        <div class="menu">
+          <a href="#camisetas">Camisetas</a>
+          <a href="#tracking">Mi Pedido</a>
+        </div>
+      </nav>
+      <section class="section-header">
+
+          <div class="boxes">
+            <div class="box-white animated bounceInLeft">
+
+            </div>
+            <div class="box-green  animated bounceInUp">
+              <h1>Geekfts</h1>
+
+              <p>Un estilo Geek único y original solo para ti !</p>
+            </div>
+          </div>
+          <div class="shirts ">
+              <div class="image animated bounceInRight">
+                <img src="media/{{shirt_header.image}}" alt="">
               </div>
-              <div class="rectangle"></div>
-              <div class="half-left-circle"></div>
-            </div>
-      </div>
-      <div class="menu">
-        <a href="#">Camisetas</a>
-        <a href="#">Mi Pedido</a>
-      </div>
-    </nav>
-    <section class="section-header">
-
-        <div class="boxes">
-          <div class="box-white animated bounceInLeft">
-
+              <button class="btn btn-primary animated fadeIn">
+                <span>Quiero una ya!!!</span>
+              </button>
           </div>
-          <div class="box-green  animated bounceInUp">
-            <h1>Geekfts</h1>
+      </section>
+      <section class="section-gallery" id="camisetas">
 
-            <p>Tu unico y verdadero estilo Geek</p>
-          </div>
-        </div>
-        <div class="shirts ">
-            <div class="image animated bounceInRight">
-              <img src="static/img/franela1.png" alt="">
-            </div>
-            <button class="btn btn-primary animated fadeIn">
-              <span>Quiero una ya!!!</span>
-            </button>
-        </div>
-    </section>
-    <section class="section-gallery">
-
-      <div class="content">
-          <div class="title">
-              <h2>Todas Las Franelas</h2>
-            </div>
-
-            <div class="gallery">
-              <div class="image"><img src="static/img/franela1.png" alt=""></div>
-              <div class="image"><img src="static/img/franela2.png" alt=""></div>
-              <div class="image"><img src="static/img/franela1.png" alt=""></div>
-              <div class="image"><img src="static/img/franela1.png" alt=""></div>
-              <div class="image"><img src="static/img/franela2.png" alt=""></div>
-              <div class="image"><img src="static/img/franela1.png" alt=""></div>
-            </div>
-
-            <button class="btn btn-dark ">
-                <span>Ver Todas</span>
-            </button>
-      </div>
-      
-    </section>
-
-    <section class="section-tracking">
-      <div class="content">
-        <div class="title">
-          <h2>Rastrear mi pedido</h2>
-        </div>
-
-        <div class="search">
-          <input type="text" name="track">
-        </div>
-        <button class="btn btn-primary">
-            <span>Buscar</span>
-        </button>
-      </div>
-    </section>
-    <section class="section-contact">
         <div class="content">
             <div class="title">
-              <h3>En Geekfts no solo somos camisetas, te brindamos una experiencia Geek única</h3>
-              <p>Dejanos tu correo y mantente informado de novedades, sorteos y mucho más</p>
-            </div>
-            <div class="subscribe">
-                <input type="text" name="contact" id="subscribe">
-                <button class="btn btn-dark">
-                    <span>Subscribirme</span>
-                </button>
-            </div>
-            
-          </div>
-    </section>
-    <footer>
-        <div class="quote">
-            <h4>Puedes seguirnos y tambien contactarnos para cualquier duda
-            </h4>
-        </div>
+                <h2>Galería Geekfts</h2>
+              </div>
 
-        <div class="socials">
-            <a target="_blank" href="https://twitter.com/HenryGBC">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
-            <a target="_blank" href="https://www.instagram.com/geekfts/">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-            </a>
-            <a target="_blank" href="mailto:geekfts@gmail.com">
-                <i class="fa fa-envelope-o" aria-hidden="true"></i>
-            </a>
-        </div>
-        <div class="powered">
-          <p>Powered By @Geekfts</p>
+              <div class="gallery">
+                {% for shirt in shirts %}
+                  <div class="image">
+                    <img src="media/{{shirt.image}}" alt="">
+                  </div>
+                {% endfor %}
+              </div>
+
+              <a href="/galeria" class="btn btn-dark ">
+                  <span>Ver Todas</span>
+              </a>
         </div>
         
-    </footer>
-	<div class="ws-chat">
-		<i class="fa fa-times close" id="close-ws" aria-hidden="true"></i>
-		<div class="header">
-			<p>Hola,</p>
-			<p>Este es nuestro Whatsapp: +57 305 8628798</p>
-			<p>Comunicate con nosotros</p>
-		</div>
-		<div class="body">
-			<a target="_blank" href="https://api.whatsapp.com/send?phone=573058628798&text=Hola%20quiero%20info">Enviar Mensaje</a>
-		</div>
-	</div>
-    <div class="ws-btn" id="open-ws">
-        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+      </section>
+
+      <section class="section-tracking" id="tracking">
+        <div class="content">
+          <div class="title">
+            <h2>No pierdas de vista tu camiseta Geekfts!</h2>
+            <p>Ingresa aquí tu # de pedido y tu e-mail</p>
+          </div>
+
+          <div class="search">
+            <input type="text" name="track" placeholder="# De Pedido">
+            <input type="email" name="email" placeholder="email@email.com">
+          </div>
+          <button class="btn btn-primary">
+              <span>Buscar</span>
+          </button>
+        </div>
+      </section>
+      <section class="section-contact">
+          <div class="content">
+              <div class="title">
+                <h3>En Geekfts no solo somos camisetas, te brindamos una experiencia Geek única</h3>
+                <p>Dejanos tu correo y tu nombre para mantenerte informado de novedades, sorteos y mucho má</p>
+              </div>
+              <!-- <div class="subscribe">
+                  <input type="text" name="contact" id="subscribe">
+                  <button class="btn btn-dark">
+                      <span>Subscribirme</span>
+                  </button>
+              </div> -->
+              <!-- Begin MailChimp Signup Form -->
+              <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+              <style type="text/css">
+                #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+
+                                    /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+                   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+              </style>
+              
+
+              <!-- Begin MailChimp Signup Form -->
+                <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+                <style type="text/css">
+                  #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+                  /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+                     We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                </style>
+                <div id="mc_embed_signup" style="max-width: 480px; margin: 0 auto; width: 100%;">
+                      <form action="https://geekfts.us18.list-manage.com/subscribe/post?u=a36c85ac52e4763e86485aa4c&amp;id=92a595285f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                          <div id="mc_embed_signup_scroll">
+                      <div class="mc-field-group">
+                        <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" style="padding: 28px 15px; font-size: 20px; width: 100%; text-indent: 0%;" placeholder="Ejm: email@email.com">
+                      </div>
+                      <div class="mc-field-group">
+                        <input type="text" value="" name="FNAME" class="" id="mce-FNAME" style="padding: 16px 0px; font-size: 20px; width: 100%; text-indent: 4%;" placeholder="Nombre">
+                      </div>
+                          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a36c85ac52e4763e86485aa4c_92a595285f" tabindex="-1" value=""></div>
+                          <div class="clear" style="width: 100%; margin: 0;"><input type="submit" value="Subscribete" name="subscribe" id="mc-embedded-subscribe" class="btn btn-dark" style="width: 97%; margin: 0;"></div>
+                          </div>
+                  </form>
+                </div>
+
+
+
+<!--End mc_embed_signup-->
+
+<!--End mc_embed_signup-->
+              
+            </div>
+      </section>
+      <footer>
+          <div class="quote">
+              <h4>Siguenos en
+              </h4>
+          </div>
+
+          <div class="socials">
+              <a target="_blank" href="https://www.facebook.com/geekfts/">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a target="_blank" href="https://www.instagram.com/geekfts/">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+          </div>
+          <div class="socials">
+              <p>O contáctanos a través de geekfts@gmail.com</p>
+              <a target="_blank" href="mailto:geekfts@gmail.com">
+                  <i class="fa fa-envelope-o" aria-hidden="true"></i>
+              </a>
+          </div>
+          <div class="powered">
+            <p>Powered By @Geekfts</p>
+          </div>
+          
+      </footer>
+    	<div class="ws-chat"  v-bind:class="{ active: showChat}">
+    		<i class="fa fa-times close" v-on:click="toggleChat" aria-hidden="true"></i>
+    		<div class="header">
+    			<p>Hola,</p>
+    			<p>Este es nuestro Whatsapp: +57 305 8628798</p>
+    			<p>Comunicate con nosotros</p>
+    		</div>
+    		<div class="body">
+    			<a target="_blank" href="https://api.whatsapp.com/send?phone=573058628798&text=Hola%20quiero%20info">Enviar Mensaje</a>
+    		</div>
+    	</div>
+      <div class="ws-btn"  v-on:click="toggleChat">
+          <i class="fa fa-whatsapp" aria-hidden="true"></i>
+      </div>
+
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="static/js/main.js"></script>
 </body>
 </html>
