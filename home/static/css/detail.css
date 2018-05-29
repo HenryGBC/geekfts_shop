@@ -1,0 +1,145 @@
+.section-gallery {
+  background: url("../img/gray-pattern.png");
+  min-height: 100vh;
+  padding: 140px 60px;
+}
+
+
+.section-gallery .content{
+	display: flex;
+	max-width: 1200px;
+	margin: 0 auto;
+	justify-content: center;
+	align-items: normal;
+	background-color: #eaeaea;
+	margin-top: 50px;
+}
+.section-gallery .content .shirts{
+	width: 55%;
+	background-color: #eaeaea;
+	padding: 15px;
+}
+.section-gallery .content .shirts .image img{
+	width:80%;
+	margin:0 auto;
+}
+.section-gallery .content .description{
+	width: 45%;
+	background-color: #cbc8c8;
+	padding: 25px 25px 25px 45px;
+	position: relative;
+}
+.section-gallery .content .description .name{
+	font-size: 25px;
+	letter-spacing: 2px;
+	border-bottom: 1px solid #9e9e9e;
+	font-weight: 700;
+}
+.section-gallery .content .description .bio{
+	font-size: 27px;
+	border-bottom: 1px solid #9e9e9e;
+	margin-bottom: 30px;
+}
+.section-gallery .content .description .sizes{
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+.section-gallery .content .description .price{
+	border-bottom: 1px solid #9e9e9e;
+	margin-bottom: 30px;
+}
+.section-gallery .content .description .colors{
+	font-size: 20px;
+}
+.section-gallery .content .description .colors p{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+.section-gallery .content .description .colors p span{
+	width: 20px;
+	height: 20px;
+	display: block;
+	margin-left: 10px;
+	border-radius: 50%;
+}
+.section-gallery .content .description .colors p span.white{
+	background: #fff;
+}
+.section-gallery .content .description .colors p span.black{
+	background: black;
+}
+.section-gallery .content .description .contact{
+	font-size: 17px;
+	margin-bottom: 30px;
+}
+.section-gallery .content .description .contact .btn{
+	background: #1ebf5a;
+	color: #fff;
+	font-size: 12px;
+	padding: 10px 25px;
+	border: 1px solid #43b732;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.section-gallery .content .description .contact .btn i{
+	font-size: 26px;
+	margin-left: 15px;
+}
+.section-gallery .content .description .social{
+	display: flex;
+	justify-content: end;
+	position: absolute;
+	bottom: 0;
+	right: 14px;
+	font-size: 15px;
+	align-items: center;
+}
+.section-gallery .content .description .social a{
+	margin-left: 10px;
+}
+.section-gallery .content .description .social a img{
+	width: 28px;
+}
+.slick-next {
+    z-index: 100 !important;
+}
+
+
+
+
+@media (max-width: 990px) {
+
+
+	.section-gallery .content .shirts .image img{
+		width:100%;
+	}
+	.section-gallery .content .description .bio{
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 768px) {
+	.section-gallery .content{
+		flex-direction: column;
+		align-items: center;
+		margin-top: 80px;
+	}
+	.section-gallery .content .shirts{
+		width: 100%;
+	}
+
+	.section-gallery .content .description{
+		width: 100%;
+		padding: 20px;
+		box-sizing: border-box;
+	}
+}
+@media (max-width: 560px) {
+	.section-gallery {
+	    padding: 140px 35px;
+	}
+}
+
+

@@ -1,4 +1,4 @@
-{% load static %}
+{% load static from staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-    <link rel="stylesheet" href="static/css/base.css">
-    <link rel="stylesheet" href="static/css/gallery.css">
-    <title>Geekfts | Galería</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+    <title>Geekfts | Detalle</title>
     <meta description="Un estilo Geek único y original solo para ti">
 </head>
 <body >
@@ -33,31 +33,66 @@
         </div>
       </nav>
       <section class="section-gallery">
-        <div class="title">
-          <h2>Galería Geekfts</h2>
-        </div>
-
         <div class="content">
-          
-          <div class="filters">
-            <a href="#" class="filter active">Todas</a>
-
-            <div class="header">
-              Sexo
-            </div>
-            <a href="#" class="filter ">Hombre</a>
-            <a href="#" class="filter ">Mujer</a>
-          </div>
           <div class="shirts">
-             {% for shirt in shirts %}
-              <div class="card-shirt">
-                <div class="image" style="background: url('media/{{shirt.image}}')"></div>
-                <!-- <img src="media/{{shirt.image}}" alt=""> -->
-                <a href="camiseta/{{shirt.url}}" class="btn btn-dark btn-shirt">
-                  <span>La quiero</span>
-                </a>
+            {% for image in object.image.all %}
+              <div class="image">
+                <img src="/media/{{image.image}}" alt="">
               </div>
             {% endfor %}
+          </div>
+          <div class="description">
+            <div class="name">
+              <p>{{object.name}}</p>
+            </div>
+            <div class="bio">
+              <p>{{object.description}}</p>
+            </div>
+            <div class="sizes">
+              <p>Disponible en las tallas: 
+                {% for size in object.size.all %}
+                  <span>{{size.size}}</span>
+                {% endfor %}
+              </p>
+            </div>
+
+            <div class="colors">
+              <p>Colores: 
+                {% for image in object.image.all %}
+                  <span class="{{image.color}}"></span>
+                {% endfor %}
+              </p>
+            </div>
+
+            <div class="sizes price">
+              <p>Precio: 
+                {% load humanize %}
+                <span>$COP {{object.price|intcomma}} </span>
+              </p>
+            </div>
+
+            <div class="contact">
+              
+              <p>Escribenos a Whatsapp al número +57 305 8628798 y nos dices que modelo quieres, y ahi te informaremos del metodo de pago, puedes hacer click en el siguiente boton que te llevará a Whatasapp</p>
+
+              <button @click="sendWs()" id="btn-ws" data-name="{{object.name}}" class="btn btn-primary animated fadeIn">
+                <span>La Quiero</span>
+                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+              </button>
+            </div>
+
+            <div class="social">
+              <p>
+                Recuerda seguirnos
+              </p>
+              <a target="_blank" href="https://www.instagram.com/geekfts/">
+                <img src="{% static 'img/instagram.svg' %}" alt="">
+              </a>
+              <a target="_blank" href="https://www.facebook.com/geekfts/">
+                <img src="{% static 'img/facebook.svg' %}" alt="">
+              </a>
+            </div>
+
           </div>
         </div>
       </section>
@@ -105,6 +140,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src="static/js/main.js"></script>
+    <script src="{% static 'js/detail.js' %}"></script>
 </body>
 </html>

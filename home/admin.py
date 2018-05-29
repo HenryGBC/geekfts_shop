@@ -5,7 +5,7 @@ from .models import Shirt, Images, Size
 
 @admin.register(Shirt)
 class ShirtAdmin(admin.ModelAdmin):
-	list_display = ('name', 'sex', 'type', 'price', 'description', 'url')
+	list_display = ('name', 'sex', 'type', 'price', 'description', 'slug')
 	filter_horizontal = ('image', 'size')
 
 

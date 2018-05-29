@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, CreateView, View
+from django.views.generic import TemplateView, CreateView, View, DetailView
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 from django.http import JsonResponse
@@ -48,7 +48,8 @@ class GalleryView(TemplateView):
 		for shirt in shirts_model:
 			shirt_data = {
 				'name': shirt.name,
-				'image': shirt.image.all()[0].image
+				'image': shirt.image.all()[0].image,
+				'url': shirt.slug
 			}
 			shirts.append(shirt_data)
 
@@ -59,3 +60,12 @@ class GalleryView(TemplateView):
 		})
 
 		return context
+
+
+class ShirtDetail(DetailView):
+    template_name = 'detail.html'
+    model = Shirt
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context

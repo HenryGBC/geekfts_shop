@@ -50,10 +50,10 @@ class Shirt(models.Model):
 	size = models.ManyToManyField(Size)
 	sex = models.CharField(max_length=2, choices=SEX_CHOICES) 
 	type = models.CharField(max_length=20, choices=TYPE_CHOICES)
-	price = models.FloatField()
+	price = models.IntegerField()
 	description = models.TextField()
 	image =  models.ManyToManyField(Images)
-	url = models.SlugField(max_length=80)
+	slug = models.SlugField(max_length=80)
 
 
 	def __str__(self):
