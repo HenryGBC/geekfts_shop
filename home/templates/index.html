@@ -82,13 +82,14 @@
             <p>Ingresa aquí tu # de pedido y tu e-mail</p>
           </div>
 
-          <div class="search">
-            <input type="text" name="track" placeholder="# De Pedido">
+          <form class="search" method="get" action="orden">
+            <input type="text" name="number" placeholder="# De Pedido">
             <input type="email" name="email" placeholder="email@email.com">
-          </div>
-          <button class="btn btn-primary">
+            <button type="submit" class="btn btn-primary">
               <span>Buscar</span>
-          </button>
+            </button>
+          </form>
+          
         </div>
       </section>
       <section class="section-contact">

@@ -1,0 +1,156 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/order.css' %}">
+    <title>Geekfts | Orden</title>
+    <meta description="Un estilo Geek único y original solo para ti">
+</head>
+<body >
+    <div id="app">
+      <nav class="navbar white" >
+        <a href="/" class="logo-css">
+            <div class="letter-g">
+                <div class="circle">
+                </div>
+                <div class="trapezoid">
+                </div>
+                <div class="rectangle"></div>
+                <div class="half-left-circle"></div>
+              </div>
+        </a>
+        <div class="menu">
+          <a href="#camisetas">Camisetas</a>
+          <a href="#tracking">Mi Pedido</a>
+        </div>
+      </nav>
+      <section class="order-section">
+        
+        <div class="title">
+          <h2>Orden #{{order.number}}</h2>
+        </div>
+
+        <div class="content-status">
+          {% if order.status == 'paid' %}
+          <div class="status active">
+            <div class="icon">
+              <img src="{% static 'img/pagado-active.svg' %}" alt="">
+            </div>
+            <p>Pagado</p>
+          </div>
+          {% else %}
+          <div class="status">
+            <div class="icon">
+              <img src="{% static 'img/pagado.svg' %}" alt="">
+            </div>
+            <p>Pagado</p>
+          </div>
+          {% endif %}
+          <div class="line"></div>
+          {% if order.status == 'in-process' %}
+          <div class="status active">
+            <div class="icon">
+              <img src="{% static 'img/proceso-active.svg' %}" alt="">
+            </div>
+            <p>En Proceso</p>
+          </div>
+          {% else %}
+          <div class="status">
+            <div class="icon">
+              <img src="{% static 'img/proceso.svg' %}" alt="">
+            </div>
+            <p>En Proceso</p>
+          </div>
+          {% endif %}
+
+          <div class="line"></div>
+          {% if order.status == 'sent' %}
+          <div class="status active">
+            <div class="icon">
+              <img src="{% static 'img/enviado-active.svg' %}" alt="">
+            </div>
+            <p>Enviado</p>
+          </div>
+          {% else %}
+          <div class="status">
+            <div class="icon">
+              <img src="{% static 'img/enviado.svg' %}" alt="">
+            </div>
+            <p>Enviado</p>
+          </div>
+          {% endif %}
+
+          <div class="line"></div>
+          {% if order.status == 'received' %}
+          <div class="status active">
+            <div class="icon">
+              <img src="{% static 'img/entregado-active.svg' %}" alt="">
+            </div>
+             <p style="bottom: -30px;">Entrega Estimada 16-04</p>
+          </div>
+          {% else %}
+         <div class="status">
+            <div class="icon">
+              <img src="{% static 'img/entregado.svg' %}" alt="">
+            </div>
+            <p style="bottom: -30px;">Entrega Estimada 16-04</p>
+          </div>
+          {% endif %}
+          
+
+        </div>
+
+        <div class="products">
+          
+        </div>
+      </section>
+      <footer>
+          <div class="quote">
+              <h4>Siguenos en
+              </h4>
+          </div>
+
+          <div class="socials">
+              <a target="_blank" href="https://www.facebook.com/geekfts/">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a target="_blank" href="https://www.instagram.com/geekfts/">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+          </div>
+          <div class="socials">
+              <p>O contáctanos a través de geekfts@gmail.com</p>
+              <a target="_blank" href="mailto:geekfts@gmail.com">
+                  <i class="fa fa-envelope-o" aria-hidden="true"></i>
+              </a>
+          </div>
+          <div class="powered">
+            <p>Powered By @Geekfts</p>
+          </div>
+          
+      </footer>
+    	<div class="ws-chat"  v-bind:class="{ active: showChat}">
+    		<i class="fa fa-times close" v-on:click="toggleChat" aria-hidden="true"></i>
+    		<div class="header">
+    			<p>Hola,</p>
+    			<p>Este es nuestro Whatsapp: +57 305 8628798</p>
+    			<p>Comunicate con nosotros</p>
+    		</div>
+    		<div class="body">
+    			<a target="_blank" href="https://api.whatsapp.com/send?phone=573058628798&text=Hola%20quiero%20info">Enviar Mensaje</a>
+    		</div>
+    	</div>
+      <div class="ws-btn"  v-on:click="toggleChat">
+          <i class="fa fa-whatsapp" aria-hidden="true"></i>
+      </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="{% static 'js/order.js' %}"></script>
+</body>
+</html>

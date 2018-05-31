@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, CreateView, View, DetailView
+from django.views.generic import TemplateView, CreateView, View, DetailView, ListView
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 from django.http import JsonResponse
 from django.template.loader import render_to_string
 import json
 from django.conf import settings
-from .models import Shirt
+from .models import Shirt, Order
 import random
 
 
@@ -69,3 +69,42 @@ class ShirtDetail(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
+
+
+class OrderView(TemplateView):
+	template_name = 'order.html'
+
+	def get_context_data(self, **kwargs):
+
+		number = self.request.GET.get('number', None)
+		email = self.request.GET.get('email', None)
+		print('NUMBEERR', number)
+		print('EMAIILL', email)
+		try:
+			order = Order.objects.get(number=number, email=email)
+			products = []
+			for product in order.product.all():
+				image_color = ''
+				for image in product.shirt.image.all():
+					if image.color == product.color:
+						image_color = image
+				data_product = {
+					'shirt': product.shirt,
+					'image': image_color
+				}
+
+				products.append(data_product)
+
+		except Order.DoesNotExist:
+			raise Http404("No MyModel matches the given query.")
+
+		print(products)
+		context = super(OrderView, self).get_context_data(**kwargs)
+		context.update({
+			'order': order,
+			'products': products
+		})
+
+		return context
+
+

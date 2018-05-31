@@ -17,13 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
-from home.views import IndexView, GalleryView, ShirtDetail
+from home.views import IndexView, GalleryView, ShirtDetail, OrderView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view()),
     path('galeria', GalleryView.as_view()),
     path('camiseta/<slug:slug>', ShirtDetail.as_view(), name="shirt_detail"),
+    path('orden', OrderView.as_view()),
     
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

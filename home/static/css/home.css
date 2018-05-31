@@ -140,12 +140,12 @@
 .section-tracking .content .search input {
   width: 90%;
   max-width: 290px;
-  padding: 10px;
-  font-size: 25px;
+  padding: 15px 10px;
+  font-size: 18px;
   text-align: center;
   border: 1px solid;
   box-shadow: none;
-  letter-spacing: 5px;
+  letter-spacing: 1px;
   box-sizing: border-box;
   margin-bottom: 10px;
 }
