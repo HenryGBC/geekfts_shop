@@ -25,7 +25,7 @@ SECRET_KEY = os.environ["SECRET_KEY_GEEKFTS"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['45.79.102.80', 'www.geekfts.com']
 
 
 # Application definition
