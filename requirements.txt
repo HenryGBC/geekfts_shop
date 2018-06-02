@@ -1,0 +1,5 @@
+Django==2.0.5
+Pillow==5.1.0
+psycopg2-binary==2.7.4
+pytz==2018.4
+termcolor==1.1.0
