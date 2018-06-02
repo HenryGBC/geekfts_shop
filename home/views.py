@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView, CreateView, View, DetailView, ListView
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
-from django.http import JsonResponse
+from django.http import JsonResponse, Http404
 from django.template.loader import render_to_string
 import json
 from django.conf import settings
@@ -49,7 +49,8 @@ class GalleryView(TemplateView):
 			shirt_data = {
 				'name': shirt.name,
 				'image': shirt.image.all()[0].image,
-				'url': shirt.slug
+				'url': shirt.slug,
+				'images': shirt.image.all()
 			}
 			shirts.append(shirt_data)
 
@@ -80,6 +81,7 @@ class OrderView(TemplateView):
 		email = self.request.GET.get('email', None)
 		print('NUMBEERR', number)
 		print('EMAIILL', email)
+		context = super(OrderView, self).get_context_data(**kwargs)
 		try:
 			order = Order.objects.get(number=number, email=email)
 			products = []
@@ -90,21 +92,26 @@ class OrderView(TemplateView):
 						image_color = image
 				data_product = {
 					'shirt': product.shirt,
+					'quantity': product.quantity,
 					'image': image_color
 				}
 
 				products.append(data_product)
 
+
+			context.update({
+				'order': order,
+				'products': products,
+				'valid': True
+			})
+
+
 		except Order.DoesNotExist:
-			raise Http404("No MyModel matches the given query.")
-
-		print(products)
-		context = super(OrderView, self).get_context_data(**kwargs)
-		context.update({
-			'order': order,
-			'products': products
-		})
-
+			context.update({
+				'order': '',
+				'products': [],
+				'valid': False
+			})
 		return context
 
 

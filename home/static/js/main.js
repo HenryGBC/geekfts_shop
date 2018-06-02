@@ -1,5 +1,12 @@
 "use strict";
 
+(function () {
+
+  setTimeout(()=>{
+    _initGallery();
+  }, 100)
+})();
+
 
 function _initGallery(){
 
@@ -41,11 +48,6 @@ var app = new Vue({
       console.log(this.showChat);
       this.showChat = !this.showChat;
     }
-  },
-  created: function () {
-    setTimeout(()=>{
-      _initGallery();
-    }, 500)
   }
 });
 

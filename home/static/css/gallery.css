@@ -84,6 +84,27 @@
 	background: #eaeaea;
 	margin-left: 14px;
 	margin-bottom: 10px;
+	position: relative;
+}
+.section-gallery .content .shirts .card-shirt .colors{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	right: 10px;
+	top: 20px;
+}
+.section-gallery .content .shirts .card-shirt .colors span{
+	width: 20px;
+	height: 20px;
+	display: block;
+	border-radius: 50%;
+	margin-bottom: 10px;
+}
+.section-gallery .content .shirts .card-shirt .colors span.white{
+	background: #fff;
+}
+.section-gallery .content .shirts .card-shirt .colors span.black{
+	background: black;
 }
 .section-gallery .content .shirts .card-shirt .image{
 	background-size: 100% !important;

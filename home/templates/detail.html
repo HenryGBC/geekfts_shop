@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/detail.css' %}">
-    <title>Geekfts | Detalle</title>
+    <title>Geekfts | {{object.name}}</title>
     <meta description="Un estilo Geek único y original solo para ti">
 </head>
 <body >
@@ -28,8 +28,8 @@
               </div>
         </a>
         <div class="menu">
-          <a href="#camisetas">Camisetas</a>
-          <a href="#tracking">Mi Pedido</a>
+          <a href="/galeria">Camisetas</a>
+          <a href="/#tracking">Mi Pedido</a>
         </div>
       </nav>
       <section class="section-gallery">
@@ -73,7 +73,7 @@
 
             <div class="contact">
               
-              <p>Escribenos a Whatsapp al número +57 305 8628798 y nos dices que modelo quieres, y ahi te informaremos del metodo de pago, puedes hacer click en el siguiente boton que te llevará a Whatasapp</p>
+              <p>Escribenos a Whatsapp al número +57 319 3220401 y nos dices que modelo quieres, y ahi te informaremos del metodo de pago, puedes hacer click en el siguiente boton que te llevará a Whatasapp</p>
 
               <button @click="sendWs()" id="btn-ws" data-name="{{object.name}}" class="btn btn-primary animated fadeIn">
                 <span>La Quiero</span>
@@ -125,11 +125,11 @@
     		<i class="fa fa-times close" v-on:click="toggleChat" aria-hidden="true"></i>
     		<div class="header">
     			<p>Hola,</p>
-    			<p>Este es nuestro Whatsapp: +57 305 8628798</p>
+    			<p>Este es nuestro Whatsapp: +57 319 3220401</p>
     			<p>Comunicate con nosotros</p>
     		</div>
     		<div class="body">
-    			<a target="_blank" href="https://api.whatsapp.com/send?phone=573058628798&text=Hola%20quiero%20info">Enviar Mensaje</a>
+    			<a target="_blank" href="https://api.whatsapp.com/send?phone=573193220401&text=Hola%20quiero%20info">Enviar Mensaje</a>
     		</div>
     	</div>
       <div class="ws-btn"  v-on:click="toggleChat">

@@ -29,7 +29,7 @@
         </a>
         <div class="menu">
           <a href="#camisetas">Camisetas</a>
-          <a href="#tracking">Mi Pedido</a>
+          <a href="/#tracking">Mi Pedido</a>
         </div>
       </nav>
       <section class="section-gallery">
@@ -56,12 +56,18 @@
                 <a href="camiseta/{{shirt.url}}" class="btn btn-dark btn-shirt">
                   <span>La quiero</span>
                 </a>
+                <div class="colors">
+                  {% for image in shirt.images %}
+                    <span class="{{image.color}}"></span>
+                  {% endfor %}
+                </div>
+                
               </div>
             {% endfor %}
           </div>
         </div>
       </section>
-      <footer>
+      <footer> 
           <div class="quote">
               <h4>Siguenos en
               </h4>
@@ -90,11 +96,11 @@
     		<i class="fa fa-times close" v-on:click="toggleChat" aria-hidden="true"></i>
     		<div class="header">
     			<p>Hola,</p>
-    			<p>Este es nuestro Whatsapp: +57 305 8628798</p>
+    			<p>Este es nuestro Whatsapp: +57 319 3220401</p>
     			<p>Comunicate con nosotros</p>
     		</div>
     		<div class="body">
-    			<a target="_blank" href="https://api.whatsapp.com/send?phone=573058628798&text=Hola%20quiero%20info">Enviar Mensaje</a>
+    			<a target="_blank" href="https://api.whatsapp.com/send?phone=573193220401&text=Hola%20quiero%20info">Enviar Mensaje</a>
     		</div>
     	</div>
       <div class="ws-btn"  v-on:click="toggleChat">

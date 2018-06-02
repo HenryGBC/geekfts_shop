@@ -1,5 +1,12 @@
 "use strict";
 
+(function () {
+
+    setTimeout(()=>{
+      _initGallery();
+    }, 100)
+})();
+
 
 function _initGallery(){
 
@@ -29,13 +36,8 @@ var app = new Vue({
     	let name = $('#btn-ws').data('name');
     	let text = 'Hola quiero la camiseta '+name;
     	text = text.replace(' ', '%20');
-    	window.open('https://api.whatsapp.com/send?phone=573058628798&text='+text+'', '_blank');
+    	window.open('https://api.whatsapp.com/send?phone=573193220401&text='+text+'', '_blank');
     }
-  },
-  created: function () {
-    setTimeout(()=>{
-      _initGallery();
-    }, 500)
   }
 });
 

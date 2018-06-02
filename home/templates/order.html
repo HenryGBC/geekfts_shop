@@ -29,6 +29,9 @@
           <a href="#tracking">Mi Pedido</a>
         </div>
       </nav>
+
+
+    {% if valid %}
       <section class="order-section">
         
         <div class="title">
@@ -43,72 +46,171 @@
             </div>
             <p>Pagado</p>
           </div>
-          {% else %}
-          <div class="status">
-            <div class="icon">
-              <img src="{% static 'img/pagado.svg' %}" alt="">
-            </div>
-            <p>Pagado</p>
-          </div>
-          {% endif %}
           <div class="line"></div>
-          {% if order.status == 'in-process' %}
-          <div class="status active">
-            <div class="icon">
-              <img src="{% static 'img/proceso-active.svg' %}" alt="">
-            </div>
-            <p>En Proceso</p>
-          </div>
-          {% else %}
           <div class="status">
             <div class="icon">
               <img src="{% static 'img/proceso.svg' %}" alt="">
             </div>
             <p>En Proceso</p>
           </div>
-          {% endif %}
-
           <div class="line"></div>
-          {% if order.status == 'sent' %}
-          <div class="status active">
-            <div class="icon">
-              <img src="{% static 'img/enviado-active.svg' %}" alt="">
-            </div>
-            <p>Enviado</p>
-          </div>
-          {% else %}
           <div class="status">
             <div class="icon">
               <img src="{% static 'img/enviado.svg' %}" alt="">
             </div>
             <p>Enviado</p>
           </div>
-          {% endif %}
-
           <div class="line"></div>
-          {% if order.status == 'received' %}
-          <div class="status active">
-            <div class="icon">
-              <img src="{% static 'img/entregado-active.svg' %}" alt="">
-            </div>
-             <p style="bottom: -30px;">Entrega Estimada 16-04</p>
-          </div>
-          {% else %}
-         <div class="status">
+          <div class="status">
             <div class="icon">
               <img src="{% static 'img/entregado.svg' %}" alt="">
             </div>
             <p style="bottom: -30px;">Entrega Estimada 16-04</p>
           </div>
           {% endif %}
+
+
+           {% if order.status == 'in-process' %}
+          <div class="status active">
+            <div class="icon">
+              <img src="{% static 'img/pagado-active.svg' %}" alt="">
+            </div>
+            <p>Pagado</p>
+          </div>
+          <div class="line"></div>
+          <div class="status active">
+            <div class="icon">
+              <img src="{% static 'img/proceso-active.svg' %}" alt="">
+            </div>
+            <p>En Proceso</p>
+          </div>
+          <div class="line"></div>
+          <div class="status">
+            <div class="icon">
+              <img src="{% static 'img/enviado.svg' %}" alt="">
+            </div>
+            <p>Enviado</p>
+          </div>
+          <div class="line"></div>
+          <div class="status">
+            <div class="icon">
+              <img src="{% static 'img/entregado.svg' %}" alt="">
+            </div>
+            <p style="bottom: -30px;">Entrega Estimada 16-04</p>
+          </div>
+          {% endif %}
+
+
+          {% if order.status == 'sent' %}
+          <div class="status active">
+            <div class="icon">
+              <img src="{% static 'img/pagado-active.svg' %}" alt="">
+            </div>
+            <p>Pagado</p>
+          </div>
+          <div class="line"></div>
+          <div class="status active">
+            <div class="icon">
+              <img src="{% static 'img/proceso-active.svg' %}" alt="">
+            </div>
+            <p>En Proceso</p>
+          </div>
+          <div class="line"></div>
+          <div class="status active">
+            <div class="icon">
+              <img src="{% static 'img/enviado-active.svg' %}" alt="">
+            </div>
+            <p>Enviado</p>
+          </div>
+          <div class="line"></div>
+          <div class="status">
+            <div class="icon">
+              <img src="{% static 'img/entregado.svg' %}" alt="">
+            </div>
+            <p style="bottom: -30px;">Entrega Estimada 16-04</p>
+          </div>
+          {% endif %}
+
+          {% if order.status == 'received' %}
+          <div class="status active">
+            <div class="icon">
+              <img src="{% static 'img/pagado-active.svg' %}" alt="">
+            </div>
+            <p>Pagado</p>
+          </div>
+          <div class="line"></div>
+          <div class="status active">
+            <div class="icon">
+              <img src="{% static 'img/proceso-active.svg' %}" alt="">
+            </div>
+            <p>En Proceso</p>
+          </div>
+          <div class="line"></div>
+          <div class="status active">
+            <div class="icon">
+              <img src="{% static 'img/enviado-active.svg' %}" alt="">
+            </div>
+            <p>Enviado</p>
+          </div>
+          <div class="line"></div>
+          <div class="status active">
+            <div class="icon">
+              <img src="{% static 'img/entregado-active.svg' %}" alt="">
+            </div>
+            <p style="bottom: -30px;">Entrega Estimada 16-04</p>
+          </div>
+          {% endif %}
+
+
+
+
+
+          
           
 
         </div>
 
         <div class="products">
-          
+          {% for product in products %}
+           <div class="product">
+             <div class="image">
+               <img src="media/{{product.image.image}}" alt="">
+             </div>
+             <div class="text">
+               <h3 class="title-product">{{product.shirt.name}}</h4>
+               <p>Cantidad: {{product.quantity}}</p>
+             </div>
+           </div>
+          {% endfor %}
+
+          <div class="total">
+            <h4 class="text">Total:</h4>
+            {% load humanize %}
+            <h4>$COP {{order.total|intcomma}}</h4>
+          </div>
         </div>
       </section>
+
+     {% else %}
+        <div class="section-notfound">
+          <h4>Lo sentimos no hemos encontrado un pedido con este número o email</h4>
+
+          <div class="tracking">
+            <div class="title">
+              <p>Ingresa aquí tu # de pedido y tu e-mail</p>
+            </div>
+
+            <form class="search" method="get" action="orden">
+              <input type="text" name="number" placeholder="# De Pedido">
+              <input type="email" name="email" placeholder="email@email.com">
+              <button type="submit" class="btn btn-dark">
+                <span>Buscar</span>
+              </button>
+            </form>
+            
+          </div>
+        </div>
+     {% endif %}
       <footer>
           <div class="quote">
               <h4>Siguenos en
@@ -138,11 +240,11 @@
     		<i class="fa fa-times close" v-on:click="toggleChat" aria-hidden="true"></i>
     		<div class="header">
     			<p>Hola,</p>
-    			<p>Este es nuestro Whatsapp: +57 305 8628798</p>
+    			<p>Este es nuestro Whatsapp: +57 319 3220401</p>
     			<p>Comunicate con nosotros</p>
     		</div>
     		<div class="body">
-    			<a target="_blank" href="https://api.whatsapp.com/send?phone=573058628798&text=Hola%20quiero%20info">Enviar Mensaje</a>
+    			<a target="_blank" href="https://api.whatsapp.com/send?phone=573193220401&text=Hola%20quiero%20info">Enviar Mensaje</a>
     		</div>
     	</div>
       <div class="ws-btn"  v-on:click="toggleChat">
