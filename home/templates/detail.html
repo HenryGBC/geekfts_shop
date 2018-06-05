@@ -13,6 +13,14 @@
     <link rel="stylesheet" href="{% static 'css/detail.css' %}">
     <title>Geekfts | {{object.name}}</title>
     <meta description="Un estilo Geek único y original solo para ti">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120223100-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-120223100-1');
+    </script>
 </head>
 <body >
     <div id="app">
@@ -73,7 +81,8 @@
 
             <div class="contact">
               
-              <p>Escribenos a Whatsapp al número +57 319 3220401 y nos dices que modelo quieres, y ahi te informaremos del metodo de pago, puedes hacer click en el siguiente boton que te llevará a Whatasapp</p>
+              <p>Escribenos vía WhatsApp al número +57 319 3220401, te daremos más información sobre el <strong>método de pago</strong> para que puedas adquirir tu camiseta Geekfts YA. <br/>
+                Haz click aquí ahora.</p>
 
               <button @click="sendWs()" id="btn-ws" data-name="{{object.name}}" class="btn btn-primary animated fadeIn">
                 <span>La Quiero</span>
