@@ -143,6 +143,14 @@
 	width: 100%;
 }
 
+.order-section .products .address{
+	background-color: #bababa;
+	padding: 2px 10px;
+}
+.order-section .products .address p{
+	font-size: 22px;
+}
+
 
 
 @media (max-width: 768px) {
@@ -163,6 +171,33 @@
 	}
 	.order-section .title:before {
 		display: none;
+	}
+
+}
+@media (max-width: 570px) {
+
+	.order-section .content-status .status {
+	    height: 130px;
+	    margin-left: 10px;
+	}
+	.order-section .content-status .line {
+	    display: none;
+	}
+	.order-section .content-status .status .icon {
+	    width: 70px;
+	    height: 70px;
+	}
+
+	.order-section .content-status .status p {
+	    width: 80px;
+	}
+
+}
+@media (max-width: 340px) {
+
+	.order-section .content-status .status .icon {
+	    width: 60px;
+	    height: 60px;
 	}
 
 }

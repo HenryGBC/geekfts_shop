@@ -26,8 +26,8 @@ class ShirtColorAdmin(admin.ModelAdmin):
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-	list_display = ('name', 'phone', 'email', 'status', 'total', 'iva', 'number')
-	search_fields = ('name', 'email', 'status')
+	list_display = ('name', 'phone', 'email', 'status', 'total', 'iva', 'number', 'address')
+	search_fields = ('name', 'email', 'status', 'phone')
 	filter_horizontal = ('product',)
 
 

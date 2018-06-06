@@ -103,6 +103,7 @@ class Order(models.Model):
 	iva = models.CharField(max_length=10, default='0')
 	number = models.IntegerField(unique=True)
 	delivery_date = models.DateField()
+	address = models.CharField(max_length=200)
 
 
 	def __str__(self):
