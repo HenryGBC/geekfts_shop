@@ -93,7 +93,8 @@ class OrderView(TemplateView):
 				data_product = {
 					'shirt': product.shirt,
 					'quantity': product.quantity,
-					'image': image_color
+					'image': image_color,
+					'size': product.size
 				}
 
 				products.append(data_product)

@@ -22,7 +22,7 @@ class SizeAdmin(admin.ModelAdmin):
 
 @admin.register(ShirtOrder)
 class ShirtColorAdmin(admin.ModelAdmin):
-	list_display = ('shirt', 'color', 'quantity')
+	list_display = ('shirt', 'color', 'quantity', 'size')
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
