@@ -73,15 +73,22 @@ class ShirtOrder(models.Model):
 		('red', 'Rojo'),
 		('green', 'Verde')		
 	)
+	SIZE_CHOICES = (
+		('s', 'S'),
+		('m', 'M'),
+		('l', 'L'),
+		('xl', 'XL')
+	)
 
 	shirt = models.ForeignKey(Shirt, on_delete=models.CASCADE)
 	color = models.CharField(max_length=20, choices=COLOR_CHOICES)
+	size = models.CharField(max_length=20, choices=SIZE_CHOICES)
 	quantity = models.IntegerField(default=1)
 
 
 	def __str__(self):
 
-		return "%s - %s - %s" % (self.shirt.name, self.color, self.quantity)
+		return "%s - %s - %s - %s" % (self.shirt.name, self.color, self.quantity, self.size)
 
 class Order(models.Model):
 
